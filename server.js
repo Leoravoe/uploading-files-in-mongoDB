@@ -18,7 +18,7 @@ app.use(bodyParser.json())
 app.use(methodOverride('_method'))
 
 // mongdb config
-const mongoURI = 'mongodb+srv://Leoravoe:Leoravoe@cluster0.xpoy3.mongodb.net/Uploading-Images?retryWrites=true&w=majority'
+const mongoURI = process.env.DB_URI
 
 const conn = mongoose.createConnection(mongoURI,{useNewUrlParser: true, useUnifiedTopology:true},()=>{
     console.log('Connected to db')
